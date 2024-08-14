@@ -24,19 +24,16 @@ $data = db_select($sql);
             $name = $value["cate_name"];
         ?>
             <tr>
-                <td><?php echo $id;?></td>
-                <td><?php echo $name;?></td>
+                <td><?= $id ?></td>
+                <td><?= $name ?></td>
                 <td>
-                    <a href="#">Sửa</a>
-                    <a href="product_cate-del.php?id=<?php echo $id;?>"
+                    <a href="product_cate-edit.php?id=<?= $id ?>">Sửa</a>
+                    <a href="product_cate-del.php?id=<?= $id ?>"
                         onclick="return confirm('Xác nhận xóa?')">Xóa</a>
                 </td>
             </tr>
         <?php } ?>
     </tbody>
 </table>
-
-
-
 
 <?php include "_footer.php"; ?>
