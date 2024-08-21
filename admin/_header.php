@@ -1,4 +1,13 @@
-<?php include "../include/common.php";?>
+<?php include "../include/common.php";
+session_start();
+
+// Chuyển về trang đăng nhập nếu chưa đăng nhập
+if (isset($_SESSION["username"]) == false){
+    js_alert("Bạn cần đăng nhập để truy cập chức năng này!");
+    js_redirect_to("/page/login.php", true);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
