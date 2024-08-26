@@ -18,3 +18,13 @@ if (isset($_SESSION["username"]) == false){
     <link rel="stylesheet" href="<?php asset("css/admin.css");?>">
 </head>
 <body>
+
+<nav>
+    <ul>
+        <li><a href="/eshop/admin/product_cate-list.php">Danh sách danh mục</a></li>
+        <li><a href="/eshop/admin/product-list.php">Danh sách sản phẩm</a></li>
+        <li><a href="/eshop/admin/user-add.php">Thêm tài khoản</a></li>
+        <li><a href="/eshop/page/logout.php" 
+            onclick="return confirm('Xác nhận đăng xuất?')">Đăng xuất</a></li>
+    </ul>
+</nav>

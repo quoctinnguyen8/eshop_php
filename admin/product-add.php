@@ -4,10 +4,10 @@
 <?php
 
 if (is_post_method()){
-    $product_name = $_POST["product_name"] ?? "";
+    $product_name = htmlspecialchars($_POST["product_name"] ?? "");
     $price = $_POST["price"] ?? "";
     $discount_price = $_POST["discount_price"] ?? "";
-    $description = $_POST["description"] ?? "";
+    $description = htmlspecialchars($_POST["description"] ?? "");
     $cate_id = $_POST["cate_id"] ?? "";
     // Upload và nhận tên file
     $filePath = upload_and_return_filename("image") ?? "";

@@ -2,7 +2,7 @@
 
 if (is_post_method()){
     // Nhận dữ liệu từ form, method="post"
-    $name = $_POST["cate_name"] ?? "";
+    $name = htmlspecialchars($_POST["cate_name"] ?? "");
 
     // Nếu biến $name có dữ liệu
     if (empty($name) == false){
