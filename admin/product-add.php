@@ -1,6 +1,5 @@
 <?php include "_header.php"; ?>
 
-
 <?php
 
 if (is_post_method()){

@@ -41,16 +41,23 @@ $data = db_select($sql);
                 <td><?= $id ?></td>
                 <td><?= $name ?></td>
                 <td>
-                    <?= $price ?> <br>
-                    <?= $discount_price ?>
+                    <?php
+                    if (empty($discount_price) || $discount_price == 0){
+                        echo number_format($price);
+                    }else{
+                        echo "<s>" . number_format($price) . "</s>";
+                        echo "<br>";
+                        echo number_format($discount_price);
+                    }
+                    ?>
                 </td>
                 <td>
                     <img src="<?= upload($image) ?>" alt="" width="70">
                 </td>
                 <td><?= $cate_name ?></td>
                 <td>
-                    <a href="#?id=<?= $id ?>">Sửa</a>
-                    <a href="#?id=<?= $id ?>"
+                    <a href="product-edit.php?id=<?= $id ?>">Sửa</a>
+                    <a href="product-del.php?id=<?= $id ?>"
                         onclick="return confirm('Xác nhận xóa?')">Xóa</a>
                 </td>
             </tr>
