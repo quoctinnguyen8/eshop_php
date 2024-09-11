@@ -19,7 +19,7 @@ if (is_post_method()){
         if ($ket_qua == true){
             set_notify("Sửa danh mục thành công!");
             // quay về trang danh sách khi sửa thành công
-            js_redirect_to("/admin/product_cate-list.php");
+            js_redirect_to(route("qldm"));
         }
     }
 }else{
@@ -30,7 +30,7 @@ if (is_post_method()){
     // Nếu không select được dữ liệu thì về trang danh sách
     if (count($data) == 0)
     {
-        redirect_to("/admin/product_cate-list.php");
+        redirect_to(route("qldm"));
     }
 }
 

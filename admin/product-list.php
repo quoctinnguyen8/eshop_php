@@ -25,7 +25,7 @@ $data = db_select($sql);
         <th>Giá</th>
         <th>Ảnh</th>
         <th>Danh mục</th>
-        <th><a href="product-add.php">Thêm sản phẩm</a></th>
+        <th><a href="<?=route("tsp")?>">Thêm sản phẩm</a></th>
     </thead>
     <tbody>
         <?php
@@ -56,8 +56,8 @@ $data = db_select($sql);
                 </td>
                 <td><?= $cate_name ?></td>
                 <td>
-                    <a href="product-edit.php?id=<?= $id ?>">Sửa</a>
-                    <a href="product-del.php?id=<?= $id ?>"
+                    <a href="<?=route("ssp", ["id" => $id]) ?>">Sửa</a>
+                    <a href="<?=route("xsp", ["id" => $id]) ?>"
                         onclick="return confirm('Xác nhận xóa?')">Xóa</a>
                 </td>
             </tr>

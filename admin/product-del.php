@@ -1,5 +1,4 @@
 <?php
-include "../include/common.php"; 
 
 $id = $_GET["id"] ?? "";
 
@@ -22,4 +21,4 @@ if (empty($id) == false){
         set_notify("Xóa sản phẩm thành công");
     }
 }
-js_redirect_to("/admin/product-list.php");
+js_redirect_to(route("qlsp"));

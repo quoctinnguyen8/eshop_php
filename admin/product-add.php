@@ -23,7 +23,7 @@ if (is_post_method()){
     ];
     db_execute($sql, $params);
     set_notify("Thêm sản phẩm thành công");
-    redirect_to("/admin/product-list.php");
+    redirect_to(route("qlsp"));
 }
 ?>
 

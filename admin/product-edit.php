@@ -32,7 +32,7 @@ if (is_post_method()){
     db_execute($sql, $params);
     
     set_notify("Cập nhật sản phẩm thành công");
-    redirect_to("/admin/product-list.php");
+    redirect_to(route("qldm"));
 
 }else{
     // Lấy dữ liệu hiển thị lên form
@@ -42,7 +42,7 @@ if (is_post_method()){
     // Nếu không select được dữ liệu thì về trang danh sách
     if (count($data) == 0)
     {
-        redirect_to("/admin/product-list.php");
+        redirect_to(route("qldm"));
     }
 }
 

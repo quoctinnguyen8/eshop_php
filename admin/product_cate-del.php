@@ -1,5 +1,4 @@
 <?php
-include "../include/common.php"; 
 
 $id = $_GET["id"] ?? "";
 
@@ -10,7 +9,7 @@ if (empty($id) == false){
     $count = db_select($sql, [$id])[0]["CNT"];
     if ($count != 0){
         set_notify("Có $count sản phẩm thuộc danh mục này, không thể xóa!");
-        redirect_to("/admin/product_cate-list.php");
+        redirect_to(route("qldm"));
     }
 
     // Tiến hành xóa dựa theo id
@@ -21,6 +20,6 @@ if (empty($id) == false){
         set_notify("Xóa danh mục thành công!");
     }
     // Quay về trang danh sách danh mục
-    redirect_to("/admin/product_cate-list.php");
+    redirect_to(route("qldm"));
 }
 

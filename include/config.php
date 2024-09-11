@@ -24,4 +24,5 @@ $database = [
 	"password" => "",
 ];
 
-session_start();
+// Hệ thống router trong trang web
+$web_routes = require "route.php";

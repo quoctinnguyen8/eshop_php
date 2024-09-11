@@ -1,9 +1,8 @@
-<?php include "../include/common.php";
-
+<?php
 // Chuyển về trang đăng nhập nếu chưa đăng nhập
 if (isset($_SESSION["username"]) == false){
     js_alert("Bạn cần đăng nhập để truy cập chức năng này!");
-    js_redirect_to("/page/login.php", true);
+    js_redirect_to(route("dangnhap"));
 }
 
 ?>
@@ -21,10 +20,10 @@ if (isset($_SESSION["username"]) == false){
 
 <nav>
     <ul>
-        <li><a href="/eshop/admin/product_cate-list.php">Danh sách danh mục</a></li>
-        <li><a href="/eshop/admin/product-list.php">Danh sách sản phẩm</a></li>
-        <li><a href="/eshop/admin/user-add.php">Thêm tài khoản</a></li>
-        <li><a href="/eshop/page/logout.php" 
+        <li><a href="<?=route("qldm")?>">Danh sách danh mục</a></li>
+        <li><a href="<?=route("qlsp")?>">Danh sách sản phẩm</a></li>
+        <li><a href="<?=route("ttk")?>">Thêm tài khoản</a></li>
+        <li><a href="<?=route("dangxuat")?>" 
             onclick="return confirm('Xác nhận đăng xuất?')">Đăng xuất</a></li>
     </ul>
 </nav>

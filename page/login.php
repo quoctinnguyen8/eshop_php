@@ -1,6 +1,4 @@
 <?php
-include "../include/common.php";
-session_start();
 
 if (is_post_method()){
     $username = $_POST["username"] ?? "";
@@ -12,7 +10,7 @@ if (is_post_method()){
         $user = db_select($sql, [$username]);
         if (count($user) == 0){
             js_alert("Sai tên đăng nhập hoặc mật khẩu!");
-            js_redirect_to("/page/login.php", true);
+            js_redirect_to(route("dangnhap"));
         }
         // nếu tồn tại username thì so sánh mật khẩu
         $user = $user[0];
@@ -21,10 +19,10 @@ if (is_post_method()){
             // Lưu thông tin username vào session
             $_SESSION["username"] = $username;
             js_alert("Đăng nhập thành công!");
-            js_redirect_to("/admin/product-add.php", true);
+            js_redirect_to(route("qlsp"));
         }else{
             js_alert("Sai tên đăng nhập hoặc mật khẩu!");
-            js_redirect_to("/page/login.php", true);
+            js_redirect_to(route("dangnhap"));
         }
     }
 }

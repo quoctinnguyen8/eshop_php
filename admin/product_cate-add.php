@@ -16,7 +16,7 @@ if (is_post_method()){
         if ($ket_qua == true){
             set_notify("Thêm danh mục thành công!");
             // quay về trang danh sách khi thêm thành công
-            js_redirect_to("/admin/product_cate-list.php");
+            js_redirect_to(route("qldm"));
         }
     }
 }

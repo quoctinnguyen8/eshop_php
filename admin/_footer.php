@@ -1,4 +1,4 @@
-<?php include "../component/_notify.php"; ?>
+<?php include __DIR__ . "/../component/_notify.php"; ?>
 
 </body>
 </html>

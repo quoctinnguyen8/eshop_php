@@ -5,7 +5,7 @@
 }
 header{
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto 20px auto;
 }
 .main{
     max-width: 1000px;
@@ -59,3 +59,43 @@ main{
     flex-wrap: wrap;
 }
 
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    flex: 1;
+}
+
+.search-bar {
+    flex: 3;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.menu {
+    flex: 2;
+    text-align: right;
+}
+
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    color: #007BFF;
+}

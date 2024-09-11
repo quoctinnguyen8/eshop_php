@@ -1,4 +1,3 @@
-<?php include "include/common.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <header>
-        logo/
-        thanh tìm kiếm/
-        giỏ hàng/
-        đăng nhập/ đăng xuất
-        </header>
+    <header>
+        <div class="logo">Logo</div>
+        <div class="search-bar">
+            <form action="">
+                <input type="text" placeholder="Tìm kiếm...">
+            </form>
+        </div>
+        <div class="menu">
+            <a href="#">Giỏ hàng</a>
+            <?php if (isset($_SESSION["username"]) == false){ ?>
+                <a href="<?=route("dangnhap")?>">Đăng nhập</a>
+            <?php } else { ?>
+                <a href="<?=route("qlsp")?>">Quản lý</a>
+                <a href="<?=route("dangxuat")?>" 
+                    onclick="return confirm('Xác nhận đăng xuất?')">Đăng xuất</a>
+            <?php } ?>
+        </div>
+    </header>
         <section class="main">
             <aside>
                 <nav>

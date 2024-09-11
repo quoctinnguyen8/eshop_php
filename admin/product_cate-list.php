@@ -1,4 +1,5 @@
-<?php include "_header.php";
+<?php 
+include "_header.php";
 
 $sql = "SELECT id, cate_name FROM product_cate";
 $data = db_select($sql);
@@ -15,7 +16,7 @@ $data = db_select($sql);
     <thead>
         <th>Id</th>
         <th>Tên danh mục</th>
-        <th><a href="product_cate-add.php">Thêm danh mục</a></th>
+        <th><a href="<?=route("tdm")?>">Thêm danh mục</a></th>
     </thead>
     <tbody>
         <?php
@@ -27,8 +28,8 @@ $data = db_select($sql);
                 <td><?= $id ?></td>
                 <td><?= $name ?></td>
                 <td>
-                    <a href="product_cate-edit.php?id=<?= $id ?>">Sửa</a>
-                    <a href="product_cate-del.php?id=<?= $id ?>"
+                    <a href="<?=route("sdm", ["id" => $id]) ?>">Sửa</a>
+                    <a href="<?=route("xdm", ["id" => $id]) ?>"
                         onclick="return confirm('Xác nhận xóa?')">Xóa</a>
                 </td>
             </tr>
