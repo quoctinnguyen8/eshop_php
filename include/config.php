@@ -24,3 +24,4 @@ $database = [
 	"password" => "",
 ];
 
+session_start();

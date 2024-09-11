@@ -17,7 +17,7 @@ if (is_post_method()){
 
         // Nếu thực thi thành công (kết quả => true)
         if ($ket_qua == true){
-            js_alert("Sửa danh mục thành công!");
+            set_notify("Sửa danh mục thành công!");
             // quay về trang danh sách khi sửa thành công
             js_redirect_to("/admin/product_cate-list.php");
         }

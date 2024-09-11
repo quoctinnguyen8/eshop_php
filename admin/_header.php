@@ -1,5 +1,4 @@
 <?php include "../include/common.php";
-session_start();
 
 // Chuyển về trang đăng nhập nếu chưa đăng nhập
 if (isset($_SESSION["username"]) == false){
@@ -16,6 +15,7 @@ if (isset($_SESSION["username"]) == false){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý shop</title>
     <link rel="stylesheet" href="<?php asset("css/admin.css");?>">
+    <link rel="stylesheet" href="<?php asset("css/notify.css");?>">
 </head>
 <body>
 

@@ -30,7 +30,9 @@ if (is_post_method()){
         $id
     ];
     db_execute($sql, $params);
-
+    
+    set_notify("Cập nhật sản phẩm thành công");
+    redirect_to("/admin/product-list.php");
 
 }else{
     // Lấy dữ liệu hiển thị lên form

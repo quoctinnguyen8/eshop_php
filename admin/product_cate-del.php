@@ -9,8 +9,8 @@ if (empty($id) == false){
     $sql = "SELECT COUNT(*) as CNT FROM product WHERE cate_id=?";
     $count = db_select($sql, [$id])[0]["CNT"];
     if ($count != 0){
-        js_alert("Có $count sản phẩm thuộc danh mục này, không thể xóa!");
-        js_redirect_to("/admin/product_cate-list.php");
+        set_notify("Có $count sản phẩm thuộc danh mục này, không thể xóa!");
+        redirect_to("/admin/product_cate-list.php");
     }
 
     // Tiến hành xóa dựa theo id
@@ -18,9 +18,9 @@ if (empty($id) == false){
     $ket_qua = db_execute($sql, [$id]);
     // Thông báo xóa thành công
     if ($ket_qua == true){
-        js_alert("Xóa thành công!");
+        set_notify("Xóa danh mục thành công!");
     }
     // Quay về trang danh sách danh mục
-    js_redirect_to("/admin/product_cate-list.php");
+    redirect_to("/admin/product_cate-list.php");
 }
 

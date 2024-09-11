@@ -19,6 +19,7 @@ if (empty($id) == false){
         if (empty($image) == false){
             remove_file($image);
         }
+        set_notify("Xóa sản phẩm thành công");
     }
 }
-redirect_to("/admin/product-list.php");
+js_redirect_to("/admin/product-list.php");

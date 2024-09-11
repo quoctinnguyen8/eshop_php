@@ -1,0 +1,42 @@
+.notify-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.notify {
+    width: 300px;
+    margin-top: 5px;
+    border: 1px solid rgb(63, 117, 205);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.notify:has(input:checked) {
+    display: none;
+}
+
+.notify-header {
+    background-color: rgb(63, 117, 205);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notify-header>label {
+    border: 1px dashed white;
+    cursor: pointer;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.notify-header input {
+    display: none;
+}
+
+.notify-body {
+    padding: 7px 5px;
+    background-color: white;
+}

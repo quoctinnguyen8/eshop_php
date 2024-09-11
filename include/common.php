@@ -31,6 +31,7 @@ function redirect_to(string $page)
 	}
 	if (!empty($page)) {
 		header("Location: /$page");
+		exit();
 	}
 }
 
@@ -266,4 +267,9 @@ function dd(...$data)
 	$text = implode("\n\n", $textArr);
 	echo "<pre style='background-color: #efefef; padding: 15px; box-sizing: border-box'>$text</pre>";
 	die;
+}
+
+// Bổ sung chức năng đặt nội dung thông báo
+function set_notify($mesg){
+	$_SESSION["ESHOP_MESG"] = $mesg;
 }

@@ -22,6 +22,8 @@ if (is_post_method()){
         $filePath
     ];
     db_execute($sql, $params);
+    set_notify("Thêm sản phẩm thành công");
+    redirect_to("/admin/product-list.php");
 }
 ?>
 
