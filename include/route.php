@@ -15,9 +15,6 @@
  */
 
 return [
-    // "/"                     => ["trangchu", "web/index.php"],
-    // "/lien-he"              => ["lienhe", "web/contact.php"],
-    // "/contact"              => "web/contact.php"
     "/"                     => ["home", "index.php"],
     "/dang-nhap"            => ["dangnhap", "page/login.php"],
     "/dang-xuat"            => ["dangxuat", "page/logout.php"],
@@ -29,5 +26,8 @@ return [
     "/them-san-pham"        => ["tsp", "admin/product-add.php"],
     "/sua-san-pham"         => ["ssp", "admin/product-edit.php"],
     "/xoa-san-pham"         => ["xsp", "admin/product-del.php"],
-    "/them-tai-khoan"         => ["ttk", "admin/user-add.php"],
+    "/them-tai-khoan"       => ["ttk", "admin/user-add.php"],
+    "/them-vao-gio-hang"    => ["tvgh", "/page/add-to-cart.php"],
+    "/gio-hang"             => ["gh", "/page/cart.php"],
+    "/xoa-gio-hang"         => ["xgh", "/page/remove-cart.php"]
 ];

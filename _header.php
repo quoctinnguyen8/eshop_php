@@ -10,14 +10,16 @@
 <body>
     <div class="container">
     <header>
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <a href="<?= route("home")?>">Trang chủ</a>
+        </div>
         <div class="search-bar">
             <form action="">
                 <input type="text" placeholder="Tìm kiếm...">
             </form>
         </div>
         <div class="menu">
-            <a href="#">Giỏ hàng</a>
+            <a href="<?= route("gh")?>">Giỏ hàng</a>
             <?php if (isset($_SESSION["username"]) == false){ ?>
                 <a href="<?=route("dangnhap")?>">Đăng nhập</a>
             <?php } else { ?>

@@ -39,7 +39,7 @@ $data = db_select($sql);
                     ?>
                 </h4>
                 <small><?= $cate_name ?></small>
-                <a href="#" class="card-action">Đặt hàng</a>
+                <a href="<?=route("tvgh", ["id" => $id]);?>" class="card-action">Thêm vào giỏ hàng</a>
             </div>
         </div>
     <?php } ?>
