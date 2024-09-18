@@ -112,3 +112,42 @@ th, td {
     border: 1px solid rgb(120, 120, 120);
     padding: 5px;
 }
+
+
+.form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.control {
+    margin-top: 7px;
+}
+
+.control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.control input[type=text],
+.control input[type=number],
+.control input[type=tel],
+.control textarea,
+.control input[type=password] {
+    padding: 7px 10px;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid grey;
+}
+
+.control input[type=number]:focus,
+.control input[type=text]:focus {
+    box-shadow: 0 0 0 3px rgba(4, 130, 255, 0.2);
+}
+
+.control input[type=submit] {
+    padding: 7px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid grey;
+}

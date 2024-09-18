@@ -1,16 +1,10 @@
 <?php
 include "_header.php";
+include __DIR__ . "/../include/session-helper.php";
 
 // explode("_", "cart_10") => ["cart", "10"]
 
-$carts = [];
-
-// Lấy id sản phẩm từ session
-foreach ($_SESSION as $key => $value){
-    if (strpos($key, "cart_") == 0){
-        $carts[] = explode("_", $key)[1];
-    }
-}
+$carts = get_id_from_cart();
 
 $sql = "SELECT product.id, product_name, price, 
         discount_price, image, cate_name
@@ -88,12 +82,14 @@ $data = db_select($sql, [$id]);
         <?php } ?>
         <tr>
             <td colspan="8">
-                Tổng giá trị đơn hàng: <?=number_format($bill_total)?>
+                <p style="display: flex; justify-content: space-between;">
+                    Tổng giá trị đơn hàng: <?=number_format($bill_total)?>
+                    <a href="<?=route("dh"); ?>">Đặt hàng ngay!</a>
+                </p>
             </td>
         </tr>
     </tbody>
 </table>
-
 
 <?php
 include "_footer.php";

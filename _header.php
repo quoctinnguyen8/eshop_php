@@ -15,7 +15,7 @@
         </div>
         <div class="search-bar">
             <form action="">
-                <input type="text" placeholder="Tìm kiếm...">
+                <input type="search" placeholder="Tìm kiếm...">
             </form>
         </div>
         <div class="menu">

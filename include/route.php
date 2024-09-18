@@ -29,5 +29,6 @@ return [
     "/them-tai-khoan"       => ["ttk", "admin/user-add.php"],
     "/them-vao-gio-hang"    => ["tvgh", "/page/add-to-cart.php"],
     "/gio-hang"             => ["gh", "/page/cart.php"],
-    "/xoa-gio-hang"         => ["xgh", "/page/remove-cart.php"]
+    "/xoa-gio-hang"         => ["xgh", "/page/remove-cart.php"],
+    "/dat-hang"             => ["dh", "/page/checkout.php"],
 ];
