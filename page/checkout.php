@@ -7,14 +7,16 @@ if (is_post_method()){
     // Tính tổng bill
     $carts = get_id_from_cart();
     
-    $sql = "SELECT id, price, discount_price 
+    $sql = "SELECT id, product_name, price, discount_price 
             FROM product
             WHERE FIND_IN_SET(id, ?)";
     $data = db_select($sql, [join(",", $carts)]);
     $bill_total = 0;
     
+    $bill_detail_data = [];
     foreach($data as $value){
         $id = $value["id"];
+        $product_name = $value["product_name"];
         $price = $value["price"];
         $discount_price = $value["discount_price"];
         $final_price = 0;
@@ -26,6 +28,9 @@ if (is_post_method()){
         $quantity = $_SESSION["cart_$id"];
         $total = $final_price * $quantity;
         $bill_total += $total;
+        // Thêm mảng vào mảng
+        // Do chưa có bill_id nên để tạm là 0
+        $bill_detail_data[] = [0, $id, $product_name, $final_price, $quantity, $total];
     }
     
     $fullname = $_POST["fullname"] ?? "";
@@ -34,7 +39,25 @@ if (is_post_method()){
 
     $sql = "insert into bills(fullname, phone, addr, total, create_date)
             values(?, ?, ?, ?, now()) ";
-    db_execute($sql, [$fullname, $phone, $addr, $bill_total]);
+    db_execute($sql, [$fullname, $phone, $addr, $bill_total], $bill_id);
+
+    // Thêm dữ liệu cho bill_details
+    $bill_detail_sql = "insert into bill_details(
+                    bill_id, 
+                    product_id,
+                    product_name,
+                    price,
+                    quantity,
+                    total
+                )values(?, ?, ?, ?, ?, ?)";
+    foreach ($bill_detail_data as $value) {
+        // Đặt lại giá trị cho bill_id
+        $value[0] = $bill_id;
+        db_execute($bill_detail_sql, $value);
+        // Xóa sản phẩm khỏi giỏ hàng
+        unset($_SESSION["cart_$value[1]"]);
+    }
+
     redirect_to(route("home"));
 }
 
